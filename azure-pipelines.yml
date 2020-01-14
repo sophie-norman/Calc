@@ -10,6 +10,15 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'sonarConnection'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'CalcTest'
+    cliProjectName: 'CalcTest'
+    cliSources: '.'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -28,6 +37,7 @@ steps:
     pathToSources: '$(System.DefaultWorkingDirectory)/src/main/java/'
     reportDirectory: '(System.DefaultWorkingDirectory)/**/**/site/cobertura'
 
+- task: SonarQubeAnalyze@4
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
