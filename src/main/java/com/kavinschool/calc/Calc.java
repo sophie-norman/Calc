@@ -9,6 +9,11 @@ public class Calc {
 	}
 
 	public double add() {
+		if(x > 0) return 1;
+		else if *y >0) return 2;
+		
+		if(x>y) return 3;
+		
 		return x + y;
 	}
 
