@@ -8,7 +8,7 @@ public class Calc {
 		y = b;
 	}
 
-	public double add() {
+	public double add2() {
 		if(x > 0) return 1;
 		else if *y >0) return 2;
 		
@@ -17,6 +17,12 @@ public class Calc {
 		return x + y;
 	}
 
+	public double add() {
+				
+		return x + y;
+	}
+
+	
 	public double mul() {
 		return x * y;
 	}
