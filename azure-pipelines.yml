@@ -9,19 +9,15 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+schedules:
+    - cron: "0 0 * * *"
+
 steps:
 - task: SonarQubePrepare@4
   inputs:
     SonarQube: 'sonarConnection'
     scannerMode: 'Other'
-# - task: SonarQubePrepare@4
-#   inputs:
-#     SonarQube: 'sonarConnection'
-#     scannerMode: 'CLI'
-#     configMode: 'manual'
-#     cliProjectKey: 'CalcTest'
-#     cliProjectName: 'CalcTest'
-#     cliSources: '.'
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
