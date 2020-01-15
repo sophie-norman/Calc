@@ -9,9 +9,6 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-schedules:
-    - cron: "0 0 * * *"
-
 steps:
 - task: SonarQubePrepare@4
   inputs:
